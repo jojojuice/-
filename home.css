@@ -1,0 +1,304 @@
+/* cancel the margins */
+* {
+    margin: 0;
+    padding: 0;
+  }
+/* Верхняя красная полоса */
+.header { 
+    display: flex;
+    width: 1600px;
+    height: 66px;
+    position: fixed;
+    z-index: 999;
+    background-color: rgb(2525,6,0);
+    transition: height 0.8s ease-out;
+    top: 0%;
+  }
+/*Верхний заголовок*/
+.headlogo{
+    display: flex;
+    width: 183px;
+    height: 66px;
+    top: 0px;
+}
+/*Панель навигации*/
+.header__navbar {
+    display: flex;
+    width: 10px;
+    height: 66px;
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10px;
+    margin-left: 40px;
+  }
+/* содержимое панели навигации */
+.header_navitem{
+    font-size: large;
+    color: white;
+}
+.header_navitem ul {
+    color: aliceblue;
+}
+/*Заголовок первого уровня*/
+.header_navitem ul li{
+      float: left;
+      width: 150px;
+      height: 50px;
+      background-color: rgb(2525,6,0);
+      margin-right: 1px;
+      font-size:large;
+      color: white;
+      list-style: none;
+}
+/* Эффект наведения указателя */
+.header_navitem ul li:hover{
+    color:white;
+    background: black;
+}
+.header_navitem ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*Вторичное название*/
+.header_navitem ul li ul li{
+    display: none;
+    width: 150px;
+    height: 50px;
+    float: initial;
+    background: rgb(2525,6,0);
+    font-size: large;
+}
+.header_navitem ul li:hover ul li{
+    display: block;
+}
+/*Значок входа*/
+.header_login{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    left: 1000px;
+    top: 0px;
+    color: white;
+    background:none;
+    outline: none;
+    font-size: large;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+}
+.header_login a{
+    color: white;
+    text-decoration: none;
+}
+.header__login:hover {
+    color: white;
+  }
+/* список фотографий */
+.foto__list{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+#roll{/*Используется для ограничения позиции изображения*/
+    overflow:hidden;/* скрыть переполнение */
+    width: 600px;
+    height: 400px;
+    position: relative;
+    top: -65px;;
+    left: -290px;
+}
+#screen{/* Настраиваем карусельное изображение */
+    width: 4000px;
+    position: relative;
+    left: 0px;
+    animation-duration: 10s; /* Количество секунд для воспроизведения анимации */
+    animation-iteration-count: infinite;/*Анимация повторяется бесконечно*/
+    animation-name: a;/*Имя анимации*/
+    
+}
+#foto{
+    float: left;
+    width: 600px;
+    height: 400px;
+    padding: 0px 1px 0px 0px;/* Промежуток между картинками */
+}
+
+
+/* указывает на анимацию */
+@keyframes a {
+    0%   {
+        position: relative;
+        left: 0px;}
+    15%,25%  {
+        position: relative;
+        left: -600px;
+      }
+    40%,50%  {
+        position: relative;
+        left: -1200px;
+      }
+    65%,75%{
+        position: relative;
+        left: -1800px;
+      }
+      /* Чтобы переключиться на первую картинку за очень короткое время, чтобы добиться эффекта движения до упора вправо*/
+    90%,99.99%{
+        position: relative;
+        left: -2400px;
+      }
+    100% {
+        position: relative;
+        left: 0px;
+      }
+}
+/*Область новостей*/
+.new {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 100%;
+    height: 1080px;
+    color: black;
+    position: fixed;
+    margin-left: 29%;
+    position: relative;
+  }
+
+.new h3 {
+    position: relative;
+    margin: -100px auto 60px;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    font-weight: bolder;
+    font-style: italic;
+  }
+/*список новостей*/
+.news__tab__list {
+    position: relative;
+    top: -500px;
+    left: 320px;
+    width: 600px;
+    height: 400px;
+    background: rgba(38, 18, 12, 0.62);
+  }
+.news__tab__list__ul {
+    position: relative;
+    top: 50px;
+    height: 36px;
+    width: 592px;
+    margin: 35px auto 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+    list-style: none;
+  }
+.news__tab__list__ul li {
+    position: relative;
+    padding: 0 19px 12px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+  }
+.currenters {
+    color: #ffd49f;
+    border-bottom: 3px solid #ffd49f;
+  }
+ /*Область заголовка списка новостей*/
+.tab_con {
+    position: relative;
+    top: 50px;
+    width: 592px;
+    margin: 0 auto;
+    height: 260px;
+    list-style: none;
+  }
+ /*Текст в области заголовка списка новостей*/
+.tab_con a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    box-sizing: content-box;
+    font-size: 20px;
+    color:white;
+    text-decoration: none;
+  }
+ /*Название списка новостей*/
+.item_p {
+    width: 480px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 11px;
+    text-align: left;
+  }
+ /*Дата списка новостей*/
+.item_p2 {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  /*Область команд*/
+.Teams{
+  background-color: rgb(21, 21, 30);
+  width: 1517px;;
+  color:white;
+  text-align:center;
+  padding:30px 0;
+  position:relative;
+  margin-top: -650px;
+}
+.Teams h3{
+  position:relative;
+  color: aqua;
+  text-align: center;
+  font-size: 50px;
+}
+.png{
+  position: relative;
+  left: 195px;
+  width: 75%;
+}
+.png img{
+  width: 150px;
+  height: 150px;
+  display: inline;
+}
+/* Область нижнего колонтитула */
+.foot{
+  position: relative;
+  height: 200px;
+  background-image:url(images/foot.png) ;
+  background-repeat: repeat;
+  font-size: 30px;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+}
+/*Область очков*/
+.point{
+  position: relative;
+  width: 560px;
+  height: 800px;
+  display: inline;
+  left: 250x;
+}
+.point h3{
+  font-size: 30px;
+  text-align: center;
+}
+table{
+  font-size: larger;
+  font-weight: bolder;
+  border-spacing:100px 20px ;
+  position: relative;
+  left: 500px;
+}
